@@ -1,0 +1,10 @@
+nasa.gov,143416
+netcom.com,75852
+aol.com,72756
+prodigy.com,68258
+compuserve.com,63572
+ac.uk,32323
+co.uk,30089
+mmc.com,23235
+or.jp,18825
+ibm.com,17825
