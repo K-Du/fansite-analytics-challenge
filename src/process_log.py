@@ -45,7 +45,7 @@ with open(os.path.join(path, resources_file.replace('./', '')), 'w') as f:
     for i in range(n):
         f.write(str(top_resources.index[i]+'\n'))       
             
-# Feature 4 should be run first to save memory since Feature 3 will require a transforming the dataframe    
+# Feature 4 should be run first to save memory since Feature 3 will require transforming the dataframe    
 # Feature 4 
 watchlist = defaultdict(deque)
 jail = {}           
