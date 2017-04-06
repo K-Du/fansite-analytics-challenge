@@ -19,9 +19,10 @@ I used the TimeGrouper and rolling functions in pandas to group the data into ho
 
 #### Feature 4
 I created a dictionary called "watchlist" to store IP addresses when there is a failed login attempt. The values in this dict are deques with a max length of 3 that stores the the timestamps of the failed login attempts. If the time difference between the first and third failed logins is less than or equal to 20 seconds, the IP address gets blocked. Any successful login will remove the IP from the dict.    
-I created another dictionary called "jail" to store the temporarily blocked IPs, log any further access attempts, and keep track of when they should be released. A bonus feature is finding which hosts and domains tend to get blocked often, which is easily done by passing the blocked.txt file as input to feature 1.
+I created another dictionary called "jail" to store the temporarily blocked IPs, log any further access attempts, and keep track of when they should be released.  
+A bonus feature is finding which hosts and domains tend to get blocked often, which is easily done by passing the blocked.txt file as input to feature 1.
 
 #### Other thoughts
-Pandas should be efficient at handling large amounts of data and it is very useful for visualization of the data, which is why I chose to it. The bottleneck is probably the datetime parsing in pandas. For feature 4, another concern is that the dictionary could become very large and take up a lot of memory space. One simple way to deal with this is to keep track of when the most recent failed login attempt occurred, and if the timestamp of the current attempt is more than 20 seconds later, the entire dictionary can be deleted. Doing this for each invidual IP will be more effective at saving memory but will also sacrifice more speed. 
+Pandas should be efficient at handling large amounts of data and it is very useful for visualization of the data, which is why I chose to use it. The bottleneck is probably the datetime parsing in pandas. For feature 4, another concern is that the dictionary could become very large and take up a lot of memory space. One simple way to deal with this is to keep track of when the most recent failed login attempt occurred, and if the timestamp of the current attempt is more than 20 seconds later, the entire dictionary can be deleted. Doing this for each invidual IP will be more effective at saving memory but will also sacrifice more speed. 
  
 
